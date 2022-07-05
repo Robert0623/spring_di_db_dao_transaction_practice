@@ -24,3 +24,7 @@
 
 ### ch3-7 - Spring DI 활용하기 - 이론 3
 - ApplicationContextTest - IoC, DI, @Autowired 
+
+### ch3-8 - Spring DI 활용하기 - 이론 4
+- setting.properties - @Value, @PropertySource
+- ApplicationContextTest - 시스템 환경변수, 시스템 프로퍼티
