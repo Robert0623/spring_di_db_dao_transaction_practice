@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 import static org.junit.Assert.*;
@@ -127,6 +128,36 @@ public class DBConnectionTest2Test {
         pstmt.executeUpdate();
     }
 
+    @Test
+    public void transactionTest() throws Exception {
+        Connection conn = null;
+        try {
+            deleteAll();
+            conn = ds.getConnection();
+            conn.setAutoCommit(false); //true가 기본
+
+            String sql = "insert into user_info values (?, ?, ?, ?, ?, ?, now())";
+
+            PreparedStatement pstmt = conn.prepareStatement(sql); //SQL Infection, 성능 향상에 유리(재사용 가능)
+            pstmt.setString(1, "asdf");
+            pstmt.setString(2, "1234");
+            pstmt.setString(3, "abc");
+            pstmt.setString(4, "aaa@aaa.com");
+            pstmt.setDate(5, new java.sql.Date(new Date().getTime()));
+            pstmt.setString(6, "fb");
+
+            int rowCnt = pstmt.executeUpdate();
+
+            pstmt.setString(1, "asdf2");
+            rowCnt = pstmt.executeUpdate();
+
+            conn.commit();
+        } catch (Exception e) {
+            conn.rollback();
+            e.printStackTrace();
+        } finally {
+        }
+    }
 
     public int insertUser(User user) throws Exception {
         Connection conn = ds.getConnection();

@@ -56,3 +56,6 @@
 - pom.xml - validation-api 추가
 - servlet-context.xml - resource mapping 수정, view-controller에 홈 추가, messageSource 빈 추가
 - web.xml - 한글 변환 필터 추가
+
+### ch3-17 - Transaction, Commit, Rollback
+- DBConnectionTest2Test - Test코드로 Tx 테스트
