@@ -36,3 +36,7 @@
 - root-context.xml - DataSource를 property태그를 이용해서 bean으로 등록
 - DBConnectionTest2 - bean으로 등록된 DataSource로 DB와 연결 테스트 
 - DBConnectionTest2Test - TDD, @RunWith, @ContextConfiguration, @Autowired로 DataSource를 자동 주입 받는 법
+
+### ch3-14 - Spring으로 DB다루기 - TDD
+- User - 하던대로 작성. hashCode & equals 추가
+- DBConnectionTest2Test - select, insert, update, delete 작성 및 테스트코드 작성
