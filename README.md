@@ -46,3 +46,13 @@
 - UserDao - CRUD 메서드 interface
 - UserDaoImpl - UserDao 구현, 예외처리, close(), try-with-resources
 - UserDaoImplTest - update 테스트 코드 작성
+
+### ch3-16 - DAO의 작성과 적용 - 2
+- index.jsp, menu.css - 홈화면
+- LoginController - 로그인 - userDao주입, userDao를 이용해서 loginCheck()변경.
+- RegisterController - userDao주입, userDao를 이용해서 DB에 신규회원 정보를 저장
+- loginForm.jsp, registerForm.jsp, registerInfo.jsp - registerInfo에 hobby제거. 나머지는 ch2와 동일
+- UserValidator, error_message.properties - error_message의 인코딩 수정, 나머지는 ch2와 동일
+- pom.xml - validation-api 추가
+- servlet-context.xml - resource mapping 수정, view-controller에 홈 추가, messageSource 빈 추가
+- web.xml - 한글 변환 필터 추가
