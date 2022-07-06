@@ -28,3 +28,11 @@
 ### ch3-8 - Spring DI 활용하기 - 이론 4
 - setting.properties - @Value, @PropertySource
 - ApplicationContextTest - 시스템 환경변수, 시스템 프로퍼티
+
+## 07.06
+### ch3-13 - Spring으로 DB연결하기
+- pom.xml - mysql-connector-java(JDBC), spring-jdbc, spring-test, junit버전 변경
+- DBConnectionTest - MySQL 연결 테스트, select query문 사용법
+- root-context.xml - DataSource를 property태그를 이용해서 bean으로 등록
+- DBConnectionTest2 - bean으로 등록된 DataSource로 DB와 연결 테스트 
+- DBConnectionTest2Test - TDD, @RunWith, @ContextConfiguration, @Autowired로 DataSource를 자동 주입 받는 법
