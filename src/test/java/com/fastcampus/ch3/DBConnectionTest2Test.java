@@ -74,15 +74,14 @@ public class DBConnectionTest2Test {
     //매개변수로 받은 사용자 정보로 user_info테이블을 update하는 메서드
     public int updateUser(User user) throws Exception {
         Connection conn = ds.getConnection();
-        String sql = "update user_info set id = ?, pwd=?,name=?,email=?,birth=?,sns=?, reg_date=now() where id = ?";
+        String sql = "update user_info set pwd=?,name=?,email=?,birth=?,sns=?, reg_date=? where id = ?";
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, user.getId());
-        pstmt.setString(2, user.getPwd());
-        pstmt.setString(3, user.getName());
-        pstmt.setString(4, user.getEmail());
-        pstmt.setDate(5, new java.sql.Date(user.getBirth().getTime()));
-        pstmt.setString(6, user.getSns());
-//        pstmt.setDate(7, new java.sql.Date(user.getReg_date().getTime()));
+        pstmt.setString(1, user.getPwd());
+        pstmt.setString(2, user.getName());
+        pstmt.setString(3, user.getEmail());
+        pstmt.setDate(4, new java.sql.Date(user.getBirth().getTime()));
+        pstmt.setString(5, user.getSns());
+        pstmt.setDate(6, new java.sql.Date(user.getReg_date().getTime()));
         pstmt.setString(7, user.getId());
 
         int rowCnt = pstmt.executeUpdate();

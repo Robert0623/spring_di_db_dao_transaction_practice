@@ -40,3 +40,9 @@
 ### ch3-14 - Spring으로 DB다루기 - TDD
 - User - 하던대로 작성. hashCode & equals 추가
 - DBConnectionTest2Test - select, insert, update, delete 작성 및 테스트코드 작성
+
+### ch3-15 - DAO의 작성과 적용 - 1
+- root-context.xml - component-scan태그 작성
+- UserDao - CRUD 메서드 interface
+- UserDaoImpl - UserDao 구현, 예외처리, close(), try-with-resources
+- UserDaoImplTest - update 테스트 코드 작성
