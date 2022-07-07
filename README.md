@@ -68,3 +68,7 @@
 - MyMath - 핵심 기능(사칙연산), @Component로 bean 등록
 - LogginAdvice - 부가 기능(시작, 종료 시간), @Component, @Aspect, @Around, pointcut
 - AopMain2 - Root AC(root-context_aop.xml)로 MyMath클래스를 이용해서 AOP 실습
+
+### ch3-19 - 서비스 계층의 분리와 @Transactional - 1
+- A1Dao - 테스트 코드로 Tx 사용을 위해, conn(getConnection(), close()) 수정, insert, deleteAll 작성
+- A1DaoTest - Tx Manager 수동 생성 및 commit, rollback에 Tx 적용 테스트
