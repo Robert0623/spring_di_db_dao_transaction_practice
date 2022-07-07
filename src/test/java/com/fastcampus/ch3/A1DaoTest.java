@@ -23,17 +23,21 @@ public class A1DaoTest {
     @Autowired
     DataSource ds;
 
+    @Autowired
+    DataSourceTransactionManager tm; //TxManager를 bean으로 등록하고 주입
+
     @Test
     public void insertTest() throws Exception {
         //TxManager를 생성
-        PlatformTransactionManager tm = new DataSourceTransactionManager(ds);
+        //위에서 자동 주입 받았으므로, 수동 생성하는 밑에 줄은 주석처리
+//        PlatformTransactionManager tm = new DataSourceTransactionManager(ds);
         TransactionStatus status = tm.getTransaction(new DefaultTransactionDefinition());
 
         //Tx 시작
         try {
             a1Dao.deleteAll();
             a1Dao.insert(1, 100);
-            a1Dao.insert(1, 200);
+            a1Dao.insert(2, 200);
             tm.commit(status);
         } catch (Exception e) {
             e.printStackTrace();

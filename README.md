@@ -72,3 +72,10 @@
 ### ch3-19 - 서비스 계층의 분리와 @Transactional - 1
 - A1Dao - 테스트 코드로 Tx 사용을 위해, conn(getConnection(), close()) 수정, insert, deleteAll 작성
 - A1DaoTest - Tx Manager 수동 생성 및 commit, rollback에 Tx 적용 테스트
+
+### ch3-20 - 서비스 계층의 분리와 @Transactional - 2
+- root-context.xml - TxManager bean으로 등록
+- A1DaoTest - bean으로 등록된 TxManager를 자동 주입받게 수정
+- B1Dao - A1Dao 복사
+- TxService - A1Dao, B1Dao를 주입받아서, @Transactional로 TxManager 사용, rollbackFor
+- TxServiceTest - TxService의 @Transactional 테스트 코드 작성
