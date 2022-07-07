@@ -79,3 +79,7 @@
 - B1Dao - A1Dao 복사
 - TxService - A1Dao, B1Dao를 주입받아서, @Transactional로 TxManager 사용, rollbackFor
 - TxServiceTest - TxService의 @Transactional 테스트 코드 작성
+
+### ch3-21 - 서비스 계층의 분리와 @Transactional - 3
+- TxService - @Transactional에 propagation - REQUIRED, REQUIRES_NEW, rollbackFor 설정
+- TxServiceTest - TxService의 @Transactional 테스트 코드

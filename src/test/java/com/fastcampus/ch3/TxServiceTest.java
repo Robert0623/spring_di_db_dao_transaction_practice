@@ -17,7 +17,7 @@ public class TxServiceTest {
     @Test
     public void insertA1WithoutTxTest() throws Exception {
 //        txService.insertWithTxSuccess();
-        txService.insertWithTxFail();
+        txService.insertA1WithTx();
     }
 
 }
