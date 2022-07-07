@@ -59,3 +59,12 @@
 
 ### ch3-17 - Transaction, Commit, Rollback
 - DBConnectionTest2Test - Test코드로 Tx 테스트
+
+## 07.07
+### ch3-18 - AOP의 개념과 용어
+- AopMain - Pattern, @Transactional을 붙여서 Reflection API로 AOP를 구현
+- pom.xml - aspectjrt(이미 있음), spring-aop, aspectjweaver 추가
+- root-context_aop.xml - component-scan태그 수정, aop:aspectj태그 추가
+- MyMath - 핵심 기능(사칙연산), @Component로 bean 등록
+- LogginAdvice - 부가 기능(시작, 종료 시간), @Component, @Aspect, @Around, pointcut
+- AopMain2 - Root AC(root-context_aop.xml)로 MyMath클래스를 이용해서 AOP 실습
