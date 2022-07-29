@@ -83,3 +83,9 @@
 ### ch3-21 - 서비스 계층의 분리와 @Transactional - 3
 - TxService - @Transactional에 propagation - REQUIRED, REQUIRES_NEW, rollbackFor 설정
 - TxServiceTest - TxService의 @Transactional 테스트 코드
+
+## 07.29
+### ch3-1 ~ ch3-15 요약 및 복습
+- Spring DI, IoC
+- JDBC, DB, TDD
+- DAO - UserDao
